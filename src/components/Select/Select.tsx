@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Dropdown.module.scss";
+import {DropdownProps} from "./ISelect";
 
-interface DropdownProps {
-    options: string[];
-    defaultOption: string;
-}
-
-const Dropdown: React.FC<DropdownProps> = ({ options, defaultOption }) => {
+export const Dropdown: React.FC<DropdownProps> = ({ options, defaultOption }) => {
     const [selectedOption, setSelectedOption] = useState(defaultOption);
 
     const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -27,5 +23,3 @@ const Dropdown: React.FC<DropdownProps> = ({ options, defaultOption }) => {
         </select>
     );
 };
-
-export default Dropdown;
